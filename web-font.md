@@ -1,4 +1,4 @@
-## Web Font Loader
+# Web Font
 
 - https://github.com/typekit/webfontloader
 - https://blog.aroundit.net/webfont-fout/
@@ -19,4 +19,16 @@ WebFontConfig = {
   wf.async = true;
   s.parentNode.insertBefore(wf, s);
 })(document);
+```
+
+- https://blog.graphiq.com/finding-the-best-free-fonts-for-numbers-25c54002a895
+
+```js
+const style = document.createElement('style');
+document.head.appendChild(style);
+const styleSheet = style.sheet;
+[
+  '.month-price-value { font-family: "Droid Serif"; font-size: 2.4rem; }',
+  '.month-price-value::before { content: "¥"; }'
+].forEach(rule => styleSheet.insertRule(rule, styleSheet.cssRules.length));
 ```
