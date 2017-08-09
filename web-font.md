@@ -35,6 +35,7 @@ const fontFamily = 'Fjalla One'; // 'Droid Serif' 'Open Sans'
 [
   `.month-price-value { font-family: "${fontFamily}"; font-size: 2.4rem; }`,
   '.month-price-value::before { content: "¥"; }',
-  '.month-price-small .month-price-value { font-size: 2rem; }'
+  '.month-price-small .month-price-value { font-size: 2rem; }',
+  '.month-price-unit-yen { display: none; }'
 ].forEach(rule => styleSheet.insertRule(rule, styleSheet.cssRules.length));
 ```
