@@ -11,7 +11,8 @@ WebFontConfig = {
   google: {
     families: [
       // 'Droid Serif:400,700',
-      'Open Sans:400,700'
+      // 'Open Sans:400,700',
+      'Fjalla One:400,700'
     ]
   }
 };
@@ -30,8 +31,7 @@ WebFontConfig = {
 const style = document.createElement('style');
 document.head.appendChild(style);
 const styleSheet = style.sheet;
-// const fontFamily = 'Droid Serif';
-const fontFamily = 'Open Sans';
+const fontFamily = 'Fjalla One'; // 'Droid Serif' 'Open Sans'
 [
   `.month-price-value { font-family: "${fontFamily}"; font-size: 2.4rem; }`,
   '.month-price-value::before { content: "¥"; }'
