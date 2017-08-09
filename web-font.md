@@ -9,7 +9,10 @@
 ```js
 WebFontConfig = {
   google: {
-    families: ['Droid Serif:400,700']
+    families: [
+      // 'Droid Serif:400,700',
+      'Open Sans:400,700'
+    ]
   }
 };
 
@@ -27,8 +30,10 @@ WebFontConfig = {
 const style = document.createElement('style');
 document.head.appendChild(style);
 const styleSheet = style.sheet;
+// const fontFamily = 'Droid Serif';
+const fontFamily = 'Open Sans';
 [
-  '.month-price-value { font-family: "Droid Serif"; font-size: 2.4rem; }',
+  `.month-price-value { font-family: "${fontFamily}"; font-size: 2.4rem; }`,
   '.month-price-value::before { content: "¥"; }'
 ].forEach(rule => styleSheet.insertRule(rule, styleSheet.cssRules.length));
 ```
