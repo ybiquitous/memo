@@ -4,11 +4,11 @@
 
 > One of the biggest complaints I hear about TDD and unit tests is that people struggle with all of the mocking required to isolate units. Some people struggle to understand how their unit tests are even meaningful. In fact, I’ve seen developers get so lost in mocks, fakes, and stubs that they wrote entire files of unit tests where no actual implementation code was exercised at all. Oops.
 
-私がTDDとユニットテストに関して耳にするもっとも大きな不平のひとつは、人々がユニットを分離するために必要とされるすべてのモッキングと悪戦苦闘していることです。ある人々は彼らのユニットテストがどうしたらなおも意味のあるものとなるのかを理解するに苦労しています。事実、私は開発者たちがユニットテストのファイル全体で書いたモック、フェイク、スタブで途方にくれるのを見てきました。そこでは*実際の実装コードはまったく鍛えられないというのに*。やれやれ。
+私がTDDとユニットテストに関して耳にするもっとも大きな不平のひとつは、人々がユニットを分離するために必要とされるすべてのモッキングと悪戦苦闘していることです。ある人々は彼らのユニットテストがどうしたらなおも意味のあるものとなるのかを理解するに苦労しています。事実、私は開発者たちがユニットテストのファイル全体で書いたモック、フェイク、スタブで途方にくれるのを見てきました。そこでは、*実際の実装コードはまったく鍛えられない*、というのに。やれやれ。
 
 > On the other end of the spectrum, it’s common to see developers get so sucked into the dogma of TDD that they think they absolutely must achieve 100% code coverage, by any means necessary, even if that means they have to make their codebase more complex to pull it off.
 
-スペクトルの反対側では、彼らが絶対に*なんとしてでも*コードカバレッジ100%を達成しなければならないと考えている、TDDの教義に吸い込まれていく開発者を見るのがふつうです。たとえそのことが、うまくやるためには彼らのコードベースをより複雑にしなければならないことを意味するのだとしても。
+スペクトルの反対側では、彼らが絶対に、*なんとしてでも*、コードカバレッジ100%を達成しなければならないと考えている、TDDの教義に吸い込まれていく開発者を見るのがふつうです。たとえそのことが、うまくやるためには彼らのコードベースをより複雑にしなければならないことを意味するのだとしてもです。
 
 > I frequently tell people that mocking is a code smell, but most developers pass through a stage in their TDD skills where they want to achieve 100% unit test coverage, and can’t imagine a world in which they do not use mocks extensively. In order to squeeze mocks into their application, they tend to wrap dependency injection functions around their units or (worse), pack services into dependency injection containers.
 
@@ -16,21 +16,21 @@
 
 > Angular takes this to an extreme by baking dependency injection right into all Angular component classes, tempting users to view dependency injection as the primary means of decoupling. But dependency injection is not the best way to accomplish decoupling.
 
-Angular は、すべての Angular コンポーネントクラスの中に依存性注入を膨らませることによって、ユーザーが依存性注入を疎結合の主な手段とみなすように仕向けることによって、これを極端に推し進めます。しかし、依存性注入は疎結合を達成する最善の方法ではありません。
+Angular は、すべての Angular コンポーネントクラスの中に依存性注入を膨らませ、ユーザーが依存性注入を疎結合の主な手段とみなすように仕向けることによって、これを極端に推し進めます。しかし、依存性注入は疎結合を達成する最善の方法ではありません。
 
 ## TDDはより良い設計につながるべき (TDD should lead to better design)
 
-> The process of learning effective TDD is the process of learning how to build more modular applications.
+>> The process of learning effective TDD is the process of learning how to build more modular applications.
 
-効果的なTDDを学ぶというプロセスは、よりモジュラーなアプリケーションをどうやって構築するかを学ぶプロセスである。
+> 効果的なTDDを学ぶというプロセスは、よりモジュール化されたアプリケーションをどうやって構築するかを学ぶプロセスである。
 
 > TDD tends to have a simplifying effect on code, not a complicating effect. If you find that your code gets harder to read or maintain when you make it more testable, or you have to bloat your code with dependency injection boilerplate, you’re doing TDD wrong.
 
-TDDはコードにおいて単純化する効果をもつ傾向にあります、複雑化する効果ではなく。もしあなたが、自分のコードをテストしやすくするときにコードが読むのも保守するのも難しくなっていることを見つけるのであれば、または依存性注入ボイラープレートでコードを膨らませなければならないのであれば、あなたはTDDを間違ったやり方でおこなっています。
+TDDはコードにおいて単純化する効果をもつ傾向にあります、複雑化する効果ではなく。もしあなたが、自分のコードをテストしやすくするときにコードが読むのも保守するのも難しくなっていることを見つけるのであれば、または依存性注入の定型コードであなたのコードを膨らませなければならないのであれば、あなたはTDDを間違ったやり方でおこなっています。
 
 > Don’t waste your time wedging dependency injection into your app so you can mock the whole world. Chances are very good that it’s hurting you more than it’s helping. Writing more testable code should simplify your code. It should require fewer lines of code and more readable, flexible, maintainable constructions. Dependency injection has the opposite effect.
 
-あなたが全世界をモックすることができるからといって、依存性注入をあなたのアプリに打ち込むことに時間を浪費してはいけません。助ける以上に傷つける可能性が高いです。よりテストしやすいコードを書くことは、コードを単純化するはずです。それは、より少ない行のコードと、より読みやすく、柔軟で、保守しやすい構造を要求するはずです。依存性注入は反対の効果があります。
+あなたが全世界をモックすることができるからといって、依存性注入をあなたのアプリに打ち込むことに時間を浪費してはいけません。あなたを助ける以上に傷つける可能性が高いです。よりテストしやすいコードを書くことは、コードを単純化するはずです。それは、より少ない行のコードと、より読みやすく、柔軟で、保守しやすい構造を要求するはずです。依存性注入には反対の効果があります。
 
 > This text exists to teach you two things:
 >
@@ -54,9 +54,9 @@ TDDはコードにおいて単純化する効果をもつ傾向にあります�
 
 ## コードの臭いとは？ (What is a code smell?)
 
-> “A code smell is a surface indication that usually corresponds to a deeper problem in the system.” ~ Martin Fowler
+>> “A code smell is a surface indication that usually corresponds to a deeper problem in the system.” ~ Martin Fowler
 
-「コードの臭いは、通常システムのより深い問題に対応する、表面的な兆候です。」- マーチン・ファウラー
+> 「コードの臭いは、通常システムのより深い問題に対応する、表面的な兆候です。」- マーチン・ファウラー
 
 > A code smell does not mean that something is definitely wrong, or that something must be fixed right away. It is a rule of thumb that should alert you to a possible opportunity to improve something.
 
